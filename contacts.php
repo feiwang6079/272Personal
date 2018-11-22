@@ -21,7 +21,8 @@
 <a href="products.php">Services</a><br>
 <a href="news.php">News</a><br>
 <b>Contacts</b><br>
-<a href="alluser.php">All Users</a>
+<a href="alluser.php">All Users</a><br>
+<a href="usersection.php">User section</a>
 </td>
 <td class="content">
 <br><br><br><br><br>

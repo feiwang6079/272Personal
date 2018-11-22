@@ -20,18 +20,23 @@
 
 <tr>
 <td class="list">
-<b>Home</b><br>
+<a href="index.php">Home</a><br>
 <a href="about.php">About</a><br>
 <a href="products.php">Services</a><br>
 <a href="news.php">News</a><br>
 <a href="contacts.php">Contacts</a><br>
 <a href="alluser.php">All Users</a><br>
-<a href="usersection.php">User section</a>
+<b>User section</b><br>
+
 </td>
 <td class="content">
 <br><br><br><br><br><br>
-This website is specialized in educational research, educational resources, 
-teaching services and network technology.
+<a href="usercreat.php"> Create User</a>
+<br><br><br>
+<a href="companiesusers.php"> Search User</a>
+<br><br><br>
+<a href="companiesusers.php"> All Users</a>
+
 </td>
 </tr>
 
