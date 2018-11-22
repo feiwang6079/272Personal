@@ -35,7 +35,7 @@
 <br><br><br>
 <a href="usersearch.php"> Search User</a>
 <br><br><br>
-<a href="companiesusers.php"> All Users</a>
+<a href="userall.php"> All Users</a>
 
 </td>
 </tr>
