@@ -33,7 +33,7 @@
 <br><br><br><br><br><br>
 <a href="usercreat.php"> Create User</a>
 <br><br><br>
-<a href="companiesusers.php"> Search User</a>
+<a href="usersearch.php"> Search User</a>
 <br><br><br>
 <a href="companiesusers.php"> All Users</a>
 
