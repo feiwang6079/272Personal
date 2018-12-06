@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,10 +10,10 @@
 <table style="width:100%">
 <tr>
 <td colspan="2" style="background-color:#FFA500;">
-<h1 style = "text-align:center">Educational Resource Website</h1>
-<form method="get" action="login.php">
-    <button type="submit">Login</button>
-</form>
+<h1 style = "text-align:center">Create User</h1>
+<!-- <form method="get" action="login.php"> -->
+<!--     <button type="submit">Login</button> -->
+<!-- </form> -->
 </td>
 </tr>
 
@@ -43,14 +42,11 @@
     <input type="submit" value="submit"></form>
 
 <?php
-
 include 'config.php';
-
 
 if(isset($_POST["firstname"])&&isset($_POST["lastname"]) & isset($_POST["email"]) &
     isset($_POST["homeaddress"])&&isset($_POST["homephone"]) & isset($_POST["cellphone"]))
 {
-    
     $firstname=$_POST["firstname"];
     $lastname=$_POST["lastname"];
     $email = $_POST["email"];
@@ -67,7 +63,6 @@ if(isset($_POST["firstname"])&&isset($_POST["lastname"]) & isset($_POST["email"]
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
 } 
-
 ?>
 
 </td>

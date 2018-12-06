@@ -11,10 +11,10 @@
 <table style="width:100%">
 <tr>
 <td colspan="2" style="background-color:#FFA500;">
-<h1 style = "text-align:center">Educational Resource Website</h1>
-<form method="get" action="login.php">
-    <button type="submit">Login</button>
-</form>
+<h1 style = "text-align:center">Search User</h1>
+<!-- <form method="get" action="login.php"> -->
+<!--     <button type="submit">Login</button> -->
+<!-- </form> -->
 </td>
 </tr>
 
@@ -22,7 +22,7 @@
 <td class="list">
 <a href="index.php">Home</a><br>
 <a href="about.php">About</a><br>
-<a href="products.php">Services</a><br>
+<a href="products.php">Products</a><br>
 <a href="news.php">News</a><br>
 <a href="contacts.php">Contacts</a><br>
 <a href="alluser.php">All Users</a><br>
@@ -42,20 +42,16 @@
     <input type="submit" value="search"></form>
 
 <?php
-
 include 'config.php';
-
 
 if(isset($_POST["firstname"]) || isset($_POST["lastname"]) || isset($_POST["email"]) &&
    isset($_POST["homephone"]) || isset($_POST["cellphone"]) )
 {
-    
     $firstname=$_POST["firstname"];
     $lastname=$_POST["lastname"];
     $email = $_POST["email"];
     $homephone=$_POST["homephone"];
     $cellphone = $_POST["cellphone"];
-    
     
     $sql = "select * from usersection  where firstname like '%$firstname%' and lastname like '%$lastname%' and 
             email like '%$email%' and homephone like '%$homephone%' and cellphone like '%$cellphone%' ";

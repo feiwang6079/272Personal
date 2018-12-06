@@ -1,111 +1,261 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<meta charset="utf-8"> 
-<title>Fei Wang</title> 
-<link rel="stylesheet" type="text/css" href="content.css">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="content.css">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="Dashboard">
+  <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+  <title>Fei Wang - Computer product</title>
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Bootstrap core CSS -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!--external css-->
+  <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/style-responsive.css" rel="stylesheet">
+  <link href="css/table-responsive.css" rel="stylesheet">
+
+
+
+  <!-- =======================================================
+    Template Name: Dashio
+    Template URL: https://templatemag.com/dashio-bootstrap-admin-template/
+    Author: TemplateMag.com
+    License: https://templatemag.com/license/
+  ======================================================= -->
 </head>
+
 <body>
+  <section id="container">
+    <!-- **********************************************************************************************************************************************************
+        TOP BAR CONTENT & NOTIFICATIONS
+        *********************************************************************************************************************************************************** -->
+    <!--header start-->
+    <header class="header black-bg">
+      <div class="sidebar-toggle-box">
+        <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+      </div>
+      <!--logo start-->
+      <a href="#" class="logo"><b>Computer<span>  products</span></b></a>
+      <!--logo end-->
 
-<table style="width:100%">
-<tr>
-<td colspan="2" style="background-color:#FFA500;">
-<h1 style = "text-align:center">Services</h1>
-</td>
-</tr>
-
-<tr>
-<td class="list">
-<a href="index.php">Home</a><br>
-<a href="about.php">About</a><br>
-<b>Services</b><br>
-<a href="news.php">News</a><br>
-<a href="contacts.php">Contacts</a><br>
-<a href="alluser.php">All Users</a>
-</td>
-<td class="content">
-<br><br><br><br><br>
+    </header>
+    <!--header end-->
+    <!-- **********************************************************************************************************************************************************
+        MAIN SIDEBAR MENU
+        *********************************************************************************************************************************************************** -->
+    <!--sidebar start-->
+    <aside>
+      <div id="sidebar" class="nav-collapse ">
+        <!-- sidebar menu start-->
+        <ul class="sidebar-menu" id="nav-accordion">
+          <li>
+         	 <a  href="index.php">
+              <i class="fa fa-bar-chart-o"></i>
+              <span>Homepage </span>
+              </a>
+          </li>
+        
+         <li>
+            <a href="about.php">
+              <i class="fa fa-bar-chart-o"></i>
+              <span>About </span>
+              </a>
+          </li>
+          
+         <li>
+            <a class="active" href="products.php">
+              <i class="fa fa-bar-chart-o"></i>
+              <span>Products </span>
+              </a>
+          </li>
+          
+          <li>
+            <a href="news.php">
+              <i class="fa fa-bar-chart-o"></i>
+              <span>News </span>
+              </a>
+          </li>
+          
+          <li>
+            <a href="contacts.php">
+              <i class="fa fa-bar-chart-o"></i>
+              <span>Contacts </span>
+              </a>
+          </li>
+          
+          <li>
+            <a href="alluser.php">
+              <i class="fa fa-bar-chart-o"></i>
+              <span>All Users </span>
+              </a>
+          </li>
+          
+           <li>
+            <a href="usersection.php">
+              <i class="fa fa-bar-chart-o"></i>
+              <span>User section </span>
+              </a>
+          </li>
+        
+       </ul>
+        
+        <!-- sidebar menu end-->
+      </div>
+    </aside>
+    <!--sidebar end-->
+    <!-- **********************************************************************************************************************************************************
+        MAIN CONTENT
+        *********************************************************************************************************************************************************** -->
+    <!--main content start-->
+    <section id="main-content">
+      <section class="wrapper">
+        <h3><i class="fa fa-angle-right"></i> Product Introduction
+        </h3>
+        <div class="row mt">
+          <div class="col-lg-12">
+            <div class="content-panel">
+              <h4><i class="fa fa-angle-right"></i>Product Detail</h4>
+              
+              
+ 
+              
 <?php 
-$product = (int) $_GET['product'];
+$productId = (int) $_GET['product'];
 
-$expire=time()+60*60*24*30;
-//Add recent browsing record cookie
-if (isset($_COOKIE["lastfive"]))
-{
-    $arr = $_COOKIE["lastfive"];   //get cookie value
-    $array = unserialize($arr);   //Convert to array
-    
-    //If the product currently viewed is in cookie, delete it.
-    for($i = 0; $i < count($array); $i++)
-    {
-        if($product == $array[$i])
-        {
-            array_splice($array, $i, 1);
-        }
-    }
-    
-    //If the number of products exceeds 5, delete the first view
-    if(count($array) >= 5)
-    {
-        array_splice($array, 0, 1);
-    }
-    
-    $array[]= $product; //Add the latest browsing record
-    $arrar_string = serialize($array);   //convert to strng
-    setcookie("lastfive", $arrar_string, $expire);
-}
-else
-{
-    $array = array($product);
-    $arrar_string = serialize($array);
-    setcookie("lastfive", $arrar_string, $expire);
-}
+include 'config.php';
 
-//add the most views cookie
-if (isset($_COOKIE["mostfive"]))
-{
-    $arr = $_COOKIE["mostfive"];   //get cookie value
-    $array = unserialize($arr);   //Convert to array
-    
-    if(array_key_exists(strval($product), $array))   //If the cookie of the product is available, increase the number of operations.
-    {
-        $value = $array[strval($product)];
-        $value += 1;
-        $array[strval($product)] = $value;
-    }
-    else //Create cookie record for the product
-    {
-        $array[strval($product)] = 1;
-    }
-    
-    $arrar_string = serialize($array);
-    setcookie("mostfive", $arrar_string, $expire);
-}
-else 
-{
-    $array=array();
-    $array[strval($product)] = 1;
-    $arrar_string = serialize($array);
-    setcookie("mostfive", $arrar_string, $expire);
-}
+$sql = "select * from products where product_id = $productId";
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_assoc($result);
+$id = $row['product_visit'];
+$id++;
 
+$sql = "update products set product_visit = $id where product_id = $productId";
+mysqli_query($conn, $sql);
 
-echo '<img src="image/'.$product.'.png"'.' alt="service image" width="244" height="112">';
+$productImgId = $productId - 100;
+echo '<img src="img/pro'.$productImgId.'.png"'.' alt="service image" >';
 echo '<br>';
 
-$con = file("./serviceDescription.txt");
-echo $con[$product].'<br>';
+echo "Product :".$row['product_name']."<br>";
+echo "Description:".$row['product_description'];
 ?>
-</td>
-</tr>
 
-<tr>
-<td class="bottle" colspan="2" >
-feiwang.tech</td>
-</tr>
 
-</table>
+<form class="contact-form php-mail-form" role="form" action="comment.php" method="GET">
 
+ <div class="rating"> 
+        <input type="radio" id="star5" name="rating" value="5" hidden/>
+        <label for="star5"></label>
+        <input type="radio" id="star4" name="rating" value="4" hidden/>
+        <label for="star4"></label>
+        <input type="radio" id="star3" name="rating" value="3" hidden/>
+        <label for="star3"></label>
+        <input type="radio" id="star2" name="rating" value="2" hidden/>
+        <label for="star2"></label>
+        <input type="radio" id="star1" name="rating" value="1" hidden/>
+        <label for="star1"></label>
+        </div>
+		
+		<?php echo"<input name=\"product\" value=$productId hidden/>"  ?>
+
+              <div class="form-group">
+                <textarea class="form-control" name="message" id="contact-message" 
+                placeholder="Your Message" rows="5" data-rule="required" 
+                data-msg="Please write something for us"></textarea>
+                <div class="validate"></div>
+              </div>
+            <div class="form-send">
+                <button type="submit" class="btn btn-large btn-primary">Send Message</button>
+              </div>
+
+            </form>
+
+
+              
+              <section id="unseen">
+                <table class="table table-bordered table-striped table-condensed">
+                  <thead>
+
+                  </tbody>
+                </table>
+
+	<?php 
+	$sql = "select * from comments where product_id= $productId order by id desc";
+	
+	$result = mysqli_query($conn, $sql);
+	
+	echo "<div align=\"center\">";
+	echo '<table width="800" border="0">';
+	
+	echo '<tr>';
+	echo '<td>' . 'Comment' . '</td>';
+	echo '<td>' . 'Star Count' . '</td>';
+	echo '</tr>';
+	
+	while ($row = mysqli_fetch_assoc($result)) {
+	    
+	    echo '<tr>';
+	    echo '<td>' . $row['comment'] . '</td>';
+	    echo '<td>' . $row['rating'] . '</td>';
+	    echo '</tr>';
+	}
+	echo "</table></div>";
+ 	?>
+                
+              </section>
+            </div>
+            
+            <!-- /content-panel -->
+          </div>
+          <!-- /col-lg-4 -->
+        </div>
+      </section>
+      <!-- /wrapper -->
+    </section>
+    <!-- /MAIN CONTENT -->
+    <!--main content end-->
+    <!--footer start-->
+    <footer class="site-footer">
+      <div class="text-center">
+        <p>
+          &copy; Copyrights <strong>Dashio</strong>. All Rights Reserved
+        </p>
+        <div class="credits">
+          <!--
+            You are NOT allowed to delete the credit link to TemplateMag with free version.
+            You can delete the credit link only if you bought the pro version.
+            Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/dashio-bootstrap-admin-template/
+            Licensing information: https://templatemag.com/license/
+          -->
+          Created with Dashio template by <a href="https://templatemag.com/">TemplateMag</a>
+        </div>
+        <a href="responsive_table.html#" class="go-top">
+          <i class="fa fa-angle-up"></i>
+          </a>
+      </div>
+    </footer>
+    <!--footer end-->
+  </section>
+  <!-- js placed at the end of the document so the pages load faster -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+  <script class="include" type="text/javascript" src="lib/jquery.dcjqaccordion.2.7.js"></script>
+  <script src="lib/jquery.scrollTo.min.js"></script>
+  <script src="lib/jquery.nicescroll.js" type="text/javascript"></script>
+  <!--common script for all pages-->
+  <script src="lib/common-scripts.js"></script>
+  <!--script for this page-->
 </body>
-</html>
 
+</html>

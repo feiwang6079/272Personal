@@ -12,9 +12,9 @@
 <tr>
 <td colspan="2" style="background-color:#FFA500;">
 <h1 style = "text-align:center">All Companies Users</h1>
-<form method="get" action="login.php">
-    <button type="submit">Login</button>
-</form>
+<!-- <form method="get" action="login.php"> -->
+<!--     <button type="submit">Login</button> -->
+<!-- </form> -->
 </td>
 </tr>
 
@@ -22,7 +22,7 @@
 <td class="list">
 <a href="index.php">Home</a><br>
 <a href="about.php">About</a><br>
-<a href="products.php">Services</a><br>
+<a href="products.php">Products</a><br>
 <a href="news.php">News</a><br>
 <a href="contacts.php">Contacts</a><br>
 <a>All Users</a>
