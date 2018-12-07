@@ -106,6 +106,13 @@
               <span>User section </span>
               </a>
           </li>
+          
+          <li>
+            <a href="http://master.feiwang.tech/allcompanies.php">
+              <i class="fa fa-bar-chart-o"></i>
+              <span>Back To Host </span>
+              </a>
+          </li>
         
        </ul>
         
@@ -149,6 +156,16 @@ echo '<br>';
 
 echo "Product :".$row['product_name']."<br>";
 echo "Description:".$row['product_description'];
+
+
+$curl = curl_init();
+curl_setopt($curl, CURLOPT_URL, "http://master.feiwang.tech/RestHandleVisit.php");
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+$data = array("product_name"=>$row['product_name'], "product_visit" => $id, 
+    "product_url"=>"http://www.feiwang.tech/productDescription.php?product=$productId", "company_name" => "Computer Products");
+curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));
+$res = curl_exec($curl);
+curl_close($curl);
 ?>
 
 
@@ -167,7 +184,9 @@ echo "Description:".$row['product_description'];
         <label for="star1"></label>
         </div>
 		
-		<?php echo"<input name=\"product\" value=$productId hidden/>"  ?>
+		<?php echo "<input name=\"product\" value=$productId hidden/>" ;
+		      $name = $row['product_name'];
+              echo "<input name=\"product_name\" value=$name hidden/>" ;   ?>
 
               <div class="form-group">
                 <textarea class="form-control" name="message" id="contact-message" 
@@ -180,7 +199,6 @@ echo "Description:".$row['product_description'];
               </div>
 
             </form>
-
 
               
               <section id="unseen">

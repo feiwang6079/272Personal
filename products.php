@@ -102,6 +102,13 @@
               <span>User section </span>
               </a>
           </li>
+          
+         <li>
+            <a href="http://master.feiwang.tech/allcompanies.php">
+              <i class="fa fa-bar-chart-o"></i>
+              <span>Back To Host </span>
+              </a>
+          </li>
         
        </ul>
         

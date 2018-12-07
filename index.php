@@ -103,6 +103,13 @@
               <span>User section </span>
               </a>
           </li>
+          
+          <li>
+            <a href="http://master.feiwang.tech/allcompanies.php">
+              <i class="fa fa-bar-chart-o"></i>
+              <span>Back To Host </span>
+              </a>
+          </li>
         
        </ul>
         
@@ -125,8 +132,6 @@
               The online shopping mall provides you with the latest online shopping and after-sales services for laptops, 
               tablets, mobile phones, desktops, all-in-one computers, servers, peripheral digital products, smart TVs, etc., 
               to provide you with a pleasant online shopping experience.
-
-              
               </h4>
               <section id="unseen">
                 <table class="table table-bordered table-striped table-condensed">
